@@ -2,12 +2,16 @@ import sqlite3
 from flask import Flask, g
 
 app = Flask(__name__)
+cursor = conn.cursor()
 
 def getDB():
     if 'db' is not g:
         g.db = sqlite3.connect("main.db")
 
     return g.db
+
+def getUser():
+    
 
 @app.teardown_appcontext
 def teardown_db(exception):
