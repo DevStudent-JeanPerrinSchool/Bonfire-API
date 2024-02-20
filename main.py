@@ -9,6 +9,10 @@ def hello_world():
               <p>Nothing is here... but you can try those:</p>
               <a href="http://localhost:5000/api/users/1234">/api/users/userid</a>"""
 
+@app.route('/test/<user_id>')
+def test(user_id):
+    return getUser(user_id)
+
 @app.route('/api/users/<user_id>')
 def show_user_info(user_id):
     #try search userid in DB, catch error or return "all" informations about this id in json format
