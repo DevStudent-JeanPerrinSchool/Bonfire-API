@@ -11,7 +11,7 @@ def getDB():
 
 def getUser(user_id):
     cursor = getDB().cursor()
-    curs = cursor.execute(f'SELECT id FROM users WHERE id = {user_id}')
+    curs = cursor.execute(f'SELECT * FROM users WHERE id = {user_id}')
     return curs.fetchone()
 
 def createUser(username):
