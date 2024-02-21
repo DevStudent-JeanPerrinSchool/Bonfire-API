@@ -6,10 +6,10 @@ app = Flask(__name__)
 @app.route('/') #return multiple endpoints possible
 def hello_world():
     return """<h1>Welcome to Bonfire API</h1>
-              <p>Nothing is here... but you can try those:</p>
-              <code>GET/DELETE http://localhost:5000/api/user/'user_id'</code>
-              <code>POST http://localhost:5000/api/user/create</code>
-              <code>GET/DELETE http://localhost:5000/api/post/'post_id'</code>"""
+    <p>Nothing is here... but you can try those:</p>
+    <code>GET/DELETE http://localhost:5000/api/user/'user_id'</code>
+    <code>POST http://localhost:5000/api/user/create</code>
+    <code>GET/DELETE http://localhost:5000/api/post/'post_id'</code>"""
 
 @app.route('/api/user/<int:user_id>', methods=['GET', 'DELETE'])
 def user_methods(user_id):
