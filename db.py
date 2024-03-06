@@ -24,9 +24,9 @@ def deleteUser(user_id):
     curs = cursor.execute(f"DELETE FROM users WHERE id = '{user_id}';")
     curs.commit()
 
-def createPost(content):
+def createPost(content, user_id):
     cursor = getDB().cursor()
-    curs = cursor.execute(f"INSERT INTO posts (content) VALUES ('{content}');")
+    curs = cursor.execute(f"INSERT INTO posts (content, user_id) VALUES ('{content}', '{user_id}');")
     curs.commit()
 
 def deletePost(post_id):
