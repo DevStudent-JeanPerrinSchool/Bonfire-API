@@ -29,6 +29,16 @@ def createPost(content):
     curs = cursor.execute(f"INSERT INTO posts (content) VALUES ('{content}');")
     curs.commit()
 
+def deletePost(post_id):
+    cursor = getDB().cursor()
+    curs = cursor.execute(f"DELETE FROM posts WHERE post_id = '{post_id}';")
+    curs.commit()
+
+def getPost(post_id):
+    cursor = getDB().cursor()
+    curs = cursor.execute(f'SELECT * FROM posts WHERE post_id = {post_id}')
+    return curs.fetchone()
+
 @app.teardown_appcontext
 def teardown_db(exception):
     db = g.pop('db', None)
